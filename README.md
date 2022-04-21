@@ -12,6 +12,10 @@ apt-get install nginx -y
 ```
 
 ```
+apt install python3-pip
+```
+
+```
 apt-get install python3-flask -y
 ```
 
@@ -28,7 +32,7 @@ def hello_world_app():
     message = "Hello non-secured World!"
     return message
 
-@app.route('/')
+@app.route('/user')
 def hello_secured_user():
     message = "Hello secured User!"
     return message
@@ -105,3 +109,26 @@ server {
   }
 }
 ```
+
+```
+nginx -t
+```
+
+```
+nginx -s reload
+```
+JMeter Error
+```
+<html>
+<head><title>400 The SSL certificate error</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The SSL certificate error</center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+```
+
+Download the server.p12
+
+
