@@ -129,6 +129,11 @@ JMeter Error
 </html>
 ```
 
-Download the server.p12
+Download the server.p12 and configure
+
+```
+javax.net.ssl.keyStore=<your_JKS_filename.jks>
+javax.net.ssl.keyStorePassword=yourJKSpassword
+```
 
 
