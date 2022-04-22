@@ -29,12 +29,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world_app():
-    message = "Hello non-secured World!"
+    message = "Hello World!"
     return message
 
 @app.route('/user')
 def hello_secured_user():
-    message = "Hello secured User!"
+    message = "Hello User!"
     return message
 ```
 
@@ -73,7 +73,7 @@ openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
 ```
 or
 ```
- openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt -certfile certs/ca-certificates.crt
+openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
 ```
 
 ```
@@ -94,7 +94,7 @@ server {
   ssl_client_certificate  /etc/ssl/selfsignedcerts/client.crt;
   ssl_verify_client       on;
 
-  root /home/tester/wfng;
+  root /home/ubuntu;
 
   server_name _;
 
