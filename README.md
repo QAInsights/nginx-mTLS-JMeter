@@ -8,15 +8,15 @@ sudo apt-get update -y
 ```
 
 ```
-apt-get install nginx -y
+sudo apt-get install nginx -y
 ```
 
 ```
-apt-get install python3-pip
+sudo apt-get install python3-pip
 ```
 
 ```
-apt-get install python3-flask -y
+sudo apt-get install python3-flask -y
 ```
 
 ```
@@ -49,39 +49,39 @@ flask run
 mTLS Configuration
 
 ```
-cd /etc/ssl/
+sudo cd /etc/ssl/
 ```
 
 ```
-mkdir selfsignedcerts
+sudo mkdir selfsignedcerts
 ```
 
 ```
-cd selfsignedcerts/
+sudo cd selfsignedcerts/
 ```
 
 ```
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 ```
 
 ```
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout client.key -out client.crt
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout client.key -out client.crt
 ```
 
 ```
-openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
+sudo openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
 ```
 or
 ```
-openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
+sudo openssl pkcs12 -export -out server.p12 -inkey client.key -in client.crt
 ```
 
 ```
-cp /etc/nginx/sites-enabled/default default-backup
+sudo cp /etc/nginx/sites-enabled/default default-backup
 ```
 
 ```
-vim cp /etc/nginx/sites-enabled/default
+sudo vim /etc/nginx/sites-enabled/default
 ```
 
 ```
@@ -111,11 +111,11 @@ server {
 ```
 
 ```
-nginx -t
+sudo nginx -t
 ```
 
 ```
-nginx -s reload
+sudo nginx -s reload
 ```
 JMeter Error
 ```
@@ -135,5 +135,3 @@ Download the server.p12 and configure
 javax.net.ssl.keyStore=<your_JKS_filename.jks>
 javax.net.ssl.keyStorePassword=yourJKSpassword
 ```
-
-
