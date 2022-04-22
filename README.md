@@ -12,7 +12,7 @@ apt-get install nginx -y
 ```
 
 ```
-apt install python3-pip
+apt-get install python3-pip
 ```
 
 ```
